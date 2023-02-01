@@ -9,9 +9,9 @@ export class LoginComponent implements OnInit {
 
   data = "your perfect banking partner"
   inputPlaceholder = "account number"
-  acno= ''
+//   acno= ''
 // acn0 : any
-  pass: any
+//   pass: any
   userDetails: any = {
     1000: { acno: 1000, username: "sree", password: "123abc", balance: 0 },
     1001: { acno: 1001, username: "jithu", password: "abc123", balance: 0 },
@@ -28,20 +28,67 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  login() 
+  login(a:any,b:any) 
   {
-    alert('login clicked')
+    console.log(a.value);
+    console.log(b.value);
+    
+    var acnum=a.value
+    var psw=b.value
+    
+    // alert('login clicked')
+  //   var acnum=this.acno
+  //   var psw =this.pass
+    var userDetails =this.userDetails
+   if(acnum in userDetails)
+    {
+       if(psw==userDetails[acnum]["password"])
+       {
+         alert('login successful')
+       }
+       else{
+            alert('incorrect password')
+
+       }
+    }
+    else
+    {
+    alert('account num incorrect / not registered yet')
+  }
    
   }
-  acnoChange(event:any)
-  {
-       this.acno= event.target.value
-       console.log(this.acno);     
-  }
-  passchange(event:any){
-       this.pass = event.target.value
-       console.log(this.pass);
+  // login() 
+  // {
+  //   // alert('login clicked')
+  //   var acnum=this.acno
+  //   var psw =this.pass
+  //   var userDetails =this.userDetails
+  //  if(acnum in userDetails)
+  //   {
+  //      if(psw==userDetails[acnum]["password"])
+  //      {
+  //        alert('login successful')
+  //      }
+  //      else{
+  //           alert('incorrect password')
+
+  //      }
+  //   }
+  //   else
+  //   {
+  //   alert('account num incorrect / not registered yet')
+  // }
+   
+  // }
+  // acnoChange(event:any)
+  // {
+  //      this.acno= event.target.value
+  //     //  console.log(this.acno);     
+  // }
+  // passchange(event:any){
+  //      this.pass = event.target.value
+  //     //  console.log(this.pass);
        
-  }
+  // }
 }
 

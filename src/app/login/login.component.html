@@ -4,13 +4,13 @@
     <form action="" class="border p-5" style="background-color: rgba(80, 142, 218, 0.348);">
 
         <div class="mt-2 p-2">
-            <input (change)="acnoChange($event)" id="acid" name="acn" type="text" [placeholder]="inputPlaceholder" class="form-control">
+            <input #acno id="acid" name="acn" type="text" [placeholder]="inputPlaceholder" class="form-control">
         </div>
         <div class="mt-2 p-2">
-            <input (change)="passchange($event)" id="psw" name="pass" type="password" placeholder="password" class="form-control">
+            <input #psw id="psw" name="pass" type="password" placeholder="password" class="form-control">
         </div>
         <div class="mt-2 p-2">
-            <button type="button" (click)="login()" class="btn btn-outline-light" style="color: rgba(0, 0, 0, 0.512);">login</button>
+            <button type="button" (click)="login(acno,psw)" class="btn btn-outline-light" style="color: rgba(0, 0, 0, 0.512);">login</button>
         </div>
     </form>
 </div>
