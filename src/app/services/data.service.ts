@@ -48,4 +48,55 @@ export class DataService {
     }
   }
 
+  deposit(acnum:any,psw:any,amount:any)
+  {
+    let userDetails=this.userDetails
+    // convert string to integer 
+    var amnt=parseInt(amount)
+    if(acnum in userDetails)
+    {
+      if(psw==userDetails[acnum]["password"] )
+      {
+        userDetails[acnum]["balance"]+=amnt
+        return userDetails[acnum]["balance"]
+      }
+      else{
+        return false
+      }
+    }
+    else{
+      return false
+    }
+
+  }
+  
+  withdraw(acnum:any,psw:any,amount:any)
+  {
+    let userDetails=this.userDetails
+    // convert string to integer 
+    var amnt=parseInt(amount)
+    if(acnum in userDetails)
+    {
+      if(psw==userDetails[acnum]["password"] )
+      {
+        if(amnt<userDetails[acnum]["balance"]){
+        userDetails[acnum]["balance"]-=amnt
+        return userDetails[acnum]["balance"]
+      }
+      else{
+        alert(`insuffient balane`)
+      }
+    }
+      else{
+        alert(`incorrect password`)
+        return false
+      }
+    }
+    else{
+      alert(`incorrect accnt number`)
+      return false
+    }
+
+  }
+
 }
