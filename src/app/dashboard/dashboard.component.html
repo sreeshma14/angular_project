@@ -1,21 +1,23 @@
 <h4>Welcome {{user}}</h4>
-
+<div class="p-2 container w-25 text-center " style="background-color: rgba(80, 142, 218, 0.348);">
+    <a style="text-decoration: none; color: black;" href="" routerLink="/transactions">View Transaction History</a>
+</div>
 <div class="container row">
-    <div class="container col-6 p-5 text-center ">
-        <div class="container w-75 p-5 mt-1 text-center">
+    <div class="container col-6 p-5 text-center">
+        <div class="container w-75 p-5 mt-1 ">
             <h2>Deposit</h2>
-            <form action="" class="border p-1" style="background-color: rgba(80, 142, 218, 0.348);">
-                <div class="mt-2 p-2">
+            <form action="" class="border p-5 text-center" style="background-color: rgba(80, 142, 218, 0.348);">
+                <div class="mt-2 p-1">
                     <input type="text" [(ngModel)]="acno" id="dacno" name="acn" placeholder="Account number"
                         class="form-control"><br>
 
                 </div>
-                <div class="mt-1 p-2">
+                <div class="mt-1 p-1">
                     <input type="password" [(ngModel)]="psw" id="dpsw" name="pass" placeholder="Password"
                         class="form-control"><br>
 
                 </div>
-                <div class="mt-1 p-2">
+                <div class="mt-1 p-1">
                     <input type="text" [(ngModel)]="amnt" id="damount" name="amount1" placeholder="amount"
                         class="form-control"><br>
 
@@ -30,22 +32,21 @@
         </div>
     </div>
 
-    <div class="container m col-6 p-5 text-center">
-        <div class="container w-75 p-5 mt-1 text-center">
-
+    <div class="container col-6 p-5 text-center ">
+        <div class="container w-75 p-5 mt-1 ">
             <h2>Withdraw</h2>
-            <form action="" class="border p-1" style="background-color: rgba(80, 142, 218, 0.348);">
-                <div class="mt-2 p-2">
+            <form action="" class="border text-center p-5" style="background-color: rgba(80, 142, 218, 0.348);">
+                <div class="mt-2 p-1">
                     <input type="text" [(ngModel)]="acno1" id="wacno" name="acn" placeholder="Account number"
                         class="form-control"><br>
 
                 </div>
-                <div class="mt-1 p-2">
+                <div class="mt-1 p-1">
                     <input type="password" [(ngModel)]="psw1" id="wpsw" name="pass" placeholder="Password"
                         class="form-control"><br>
 
                 </div>
-                <div class="mt-1 p-2">
+                <div class="mt-1 p-1">
                     <input type="text" [(ngModel)]="amnt1" id="wamount" name="amount1" placeholder="amount"
                         class="form-control"><br>
 

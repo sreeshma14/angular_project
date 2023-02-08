@@ -47,11 +47,6 @@ else
   {
          alert(`your account has been debited with amount ${amnt}/-.Balance is ${result}/-`)
   }
-else
-{
-  alert(`incorrect account number/password`)
-}
-
 
  }
 }
