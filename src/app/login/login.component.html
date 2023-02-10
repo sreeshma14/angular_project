@@ -1,13 +1,13 @@
 <h4 style="text-align: right;">{{data}}</h4>
 <div class="container w-50 text-center" style="margin-top: 5%;" >
     <h1 class="text-center">Sign into your Bank Account </h1>
-    <form action="" (ngSubmit)="login()" class="border p-1" style="background-color: rgba(80, 142, 218, 0.348);">
+    <form action="" [formGroup]="loginForm" (ngSubmit)="login()" class="border p-1" style="background-color: rgba(80, 142, 218, 0.348);">
 
         <div class="mt-2 p-2">
-            <input [(ngModel)]="acno" id="acid" name="acn" type="text" [placeholder]="inputPlaceholder" class="form-control">
+            <input formControlName="acno" id="acid" name="acn" type="text" [placeholder]="inputPlaceholder" class="form-control">
         </div>
         <div class="mt-2 p-2">
-            <input [(ngModel)]="pass" id="psw" name="pass" type="password" placeholder="password" class="form-control">
+            <input formControlName="psw"  id="psw" name="pass" type="password" placeholder="password" class="form-control">
         </div>
         <div class="mt-2 p-2">
             <button type="submit" (click)="login()" class="btn btn-outline-light" style="color: rgba(0, 0, 0, 0.653);">login</button>

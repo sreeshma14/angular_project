@@ -1,24 +1,36 @@
 <!-- Bank signup form -->
 <div class="container w-50 mt-5">
 
-    <form action="" class="border p-1" style="background-color: rgba(80, 142, 218, 0.348);">
+    <form action="" [formGroup]="registerForm" class="border p-1" style="background-color: rgba(80, 142, 218, 0.348);">
         <h1 class="text-center ">Sign Up Here! </h1>
 
         <div class="mt-2 p-2">
-            <input [(ngModel)]="acno" type="text" id="acid" name="acn"  placeholder="Account number" class="form-control"><br>
+            <input formControlName="acno" type="text" id="acid" name="acn" placeholder="Account number"
+                class="form-control"><br>
 
         </div>
-        <div class="mt-2 p-2">
-            <input [(ngModel)]="uname" type="text" id="user" name="user1" placeholder="username" class="form-control"><br>
-
+        <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('uname')?.touched ">
+            <p class="text-danger">invalid accntnumber</p>
         </div>
         <div class="mt-2 p-2">
-            <input [(ngModel)]="pass" type="password" id="psw" name="pass" placeholder="Password" class="form-control"><br>
+            <input formControlName="uname" type="text" id="user" name="user1" placeholder="username"
+                class="form-control"><br>
+        </div>
+        <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('psw')?.touched ">
+            <p class="text-danger">invalid username</p>
+        </div>
+        <div class="mt-2 p-2">
+            <input formControlName="psw" type="password" id="psw" name="pass" placeholder="Password"
+                class="form-control"><br>
 
+        </div>
+        <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched ">
+            <p class="text-danger">invalid password</p>
         </div>
 
         <div class="container w-50 mt-2 p-1 text-center">
-            <button type="button"  (click)="register()"  class="btn btn-outline-light" style="color: rgba(0, 0, 0, 0.653);">Register</button>
+            <button type="button" (click)="register()" class="btn btn-outline-light"
+                style="color: rgba(0, 0, 0, 0.653);">Register</button>
         </div>
     </form>
 </div>

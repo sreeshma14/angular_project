@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { DeleleConfirmComponent } from './delele-confirm/delele-confirm.component';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +17,15 @@ import { TransactionsComponent } from './transactions/transactions.component';
     LoginComponent,
     DashboardComponent,
     RegisterComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    DeleleConfirmComponent,
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
